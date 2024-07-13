@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERDONAME</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://i.pinimg.com/474x/cb/72/70/cb7270a147eeac2b296f66c0d5360ae2.jpg");
+        }
+        .form-container h1 {
+            margin: 0 0 20px;
+            font-family: 'ADLaM Display', sans-serif;
+            color: aliceblue;
+        }
+        .form-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #f58f8f;
+            background-image: url("https://i.pinimg.com/474x/a6/5b/9b/a65b9b20691506b4fb68c9d35c906710.jpg");
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .form-container h1 {
+            margin: 0 0 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #boton1 {
+            position: absolute;
+            left: 20px;
+            top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div><h1>¿ME PERDONAS?</h1></div>
+        <DIV><button id="boton1">NOO</button></DIV>
+        <button id="boton2">SIII</button>
+    </div>
+
+    <script>
+        const boton1 = document.getElementById('boton1');
+        
+        function moveButton() {
+            const container = document.querySelector('.form-container');
+            const maxX = container.clientWidth - boton1.offsetWidth;
+            const maxY = container.clientHeight - boton1.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            boton1.style.left = `${randomX}px`;
+            boton1.style.top = `${randomY}px`;
+        }
+
+        boton1.addEventListener('mouseover', moveButton);
+        boton1.addEventListener('touchstart', moveButton);
+        boton2.addEventListener('click', () => {
+    window.location.href = 'index.html';  // Cambia 'otro-archivo.html' por la URL de tu archivo HTML
+});
+
+    </script>
+</body>
+</html>
